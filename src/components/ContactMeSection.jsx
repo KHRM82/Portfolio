@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useEffect } from "react";
 import { useFormik } from "formik";
 import {
@@ -34,7 +35,9 @@ const ContactMeSection = () => {
     validationSchema: Yup.object({
       firstName: Yup.string().required("Required"),
       email: Yup.string().email("Invalid email address").required("Required"),
-      comment: Yup.string().required("Required").min(25, "Minimum 25 characters"),
+      comment: Yup.string()
+        .required("Required")
+        .min(25, "Minimum 25 characters"),
     }),
   });
 
@@ -61,7 +64,11 @@ const ContactMeSection = () => {
         <Box p={6} rounded="md" w="100%">
           <form onSubmit={formik.handleSubmit}>
             <VStack spacing={4}>
-              <FormControl isInvalid={formik.touched.firstName && !!formik.errors.firstName}>
+              <FormControl
+                isInvalid={
+                  formik.touched.firstName && !!formik.errors.firstName
+                }
+              >
                 <FormLabel htmlFor="firstName">Name</FormLabel>
                 <Input
                   id="firstName"
@@ -70,7 +77,9 @@ const ContactMeSection = () => {
                 />
                 <FormErrorMessage>{formik.errors.firstName}</FormErrorMessage>
               </FormControl>
-              <FormControl isInvalid={formik.touched.email && !!formik.errors.email}>
+              <FormControl
+                isInvalid={formik.touched.email && !!formik.errors.email}
+              >
                 <FormLabel htmlFor="email">Email Address</FormLabel>
                 <Input
                   id="email"
@@ -84,11 +93,15 @@ const ContactMeSection = () => {
                 <FormLabel htmlFor="type">Type of enquiry</FormLabel>
                 <Select id="type" name="type" {...formik.getFieldProps("type")}>
                   <option value="hireMe">Freelance project proposal</option>
-                  <option value="openSource">Open source consultancy session</option>
+                  <option value="openSource">
+                    Open source consultancy session
+                  </option>
                   <option value="other">Other</option>
                 </Select>
               </FormControl>
-              <FormControl isInvalid={formik.touched.comment && !!formik.errors.comment}>
+              <FormControl
+                isInvalid={formik.touched.comment && !!formik.errors.comment}
+              >
                 <FormLabel htmlFor="comment">Your message</FormLabel>
                 <Textarea
                   id="comment"

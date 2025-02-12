@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useEffect, useRef, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
@@ -63,7 +64,12 @@ const Header = () => {
       zIndex="999"
     >
       <Box color="white" maxWidth="1280px" margin="0 auto">
-        <HStack px={16} py={4} justifyContent="space-between" alignItems="center">
+        <HStack
+          px={16}
+          py={4}
+          justifyContent="space-between"
+          alignItems="center"
+        >
           <nav>
             <HStack spacing={6}>
               {socials.map((social, index) => (
@@ -80,10 +86,16 @@ const Header = () => {
           </nav>
           <nav>
             <HStack spacing={8}>
-              <a onClick={handleClick("projects")} style={{ cursor: "pointer" }}>
+              <a
+                onClick={handleClick("projects")}
+                style={{ cursor: "pointer" }}
+              >
                 Projects
               </a>
-              <a onClick={handleClick("contactme")} style={{ cursor: "pointer" }}>
+              <a
+                onClick={handleClick("contactme")}
+                style={{ cursor: "pointer" }}
+              >
                 Contact Me
               </a>
             </HStack>

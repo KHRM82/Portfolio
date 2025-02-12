@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from "react";
 import FullScreenSection from "./FullScreenSection";
 import { Box, Heading } from "@chakra-ui/react";
@@ -54,6 +55,7 @@ const ProjectsSection = () => {
       >
         {projects.map((project) => (
           <Card
+            className="card"
             key={project.title}
             title={project.title}
             description={project.description}
