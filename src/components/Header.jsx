@@ -16,7 +16,7 @@ const socials = [
   },
   {
     icon: faLinkedin,
-    url: "https://www.linkedin.com/in/khuram-islam-81a879277/",
+    url: "https://www.linkedin.com/in/khrm82/",
   },
 ];
 
